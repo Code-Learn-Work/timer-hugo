@@ -7,7 +7,7 @@
                 {{ with .Site.Data.team.title }}<h2 class="subtitle text-center">{{ . }}</h2>{{ end }}
             </div>
             {{ range $index, $element:= .Site.Data.team.members }}
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-6 col-sm-6" style="text-align: center; margin: auto;">
                 {{ $delay := mul $index 300 }}
                 <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="{{ $delay }}ms">
                     {{ with .image }}
@@ -21,22 +21,27 @@
                     <p class="social-icons">
                         {{ with .facebook }}
                         <a href="{{ . }}" class="facebook" target="_blank">
-                            <i class="ion-social-facebook-outline"></i>
+                            <i class="ion-social-facebook"></i>
                         </a>
                         {{ end }}
                         {{ with .twitter }}
                         <a href="{{ . }}" target="_blank">
-                            <i class="ion-social-twitter-outline"></i>
+                            <i class="ion-social-twitter"></i>
                         </a>
                         {{ end }}
                         {{ with .linkedIn }}
                         <a href="{{ . }}" target="_blank">
-                            <i class="ion-social-linkedin-outline"></i>
+                            <i class="ion-social-linkedin"></i>
                         </a>
                         {{ end }}
-                        {{ with .googleplus }}
+                        {{ with .github }}
                         <a href="{{ . }}" target="_blank">
-                            <i class="ion-social-googleplus-outline"></i>
+                            <i class="ion-social-github"></i>
+                        </a>
+                        {{ end }}
+                        {{ with .reddit }}
+                        <a href="{{ . }}" target="_blank">
+                            <i class="ion-social-reddit"></i>
                         </a>
                         {{ end }}
                     </p>
