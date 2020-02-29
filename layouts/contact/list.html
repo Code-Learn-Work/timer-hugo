@@ -7,15 +7,20 @@
 <section id="contact-section">
     <div class="container">
         <div class="block wow fadeInRight" style="text-align: center;">
-            {{ with .Site.Data.contact.image }}<img src="{{ . | absURL }}" alt="contact-image" style="max-width: 100%;display: inline-block;">{{ end }}
+            {{ with .Site.Data.contact.image }}<img src="{{ . | absURL }}" alt="contact-image"
+                style="max-width: 100%;display: inline-block;">{{ end }}
         </div>
         <div class="row">
             <div class="col-md-6 mb-5 mb-md-0">
                 <div class="block">
-                    {{ with .Site.Data.contact.contactFormTitle }}<h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ . }}</h2>{{ end }}
-                    {{ with .Site.Data.contact.contactFormSubtitle }}<p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">{{ . }}</p>{{ end }}
+                    {{ with .Site.Data.contact.contactFormTitle }}<h2 class="subtitle wow fadeInDown"
+                        data-wow-duration="500ms" data-wow-delay=".3s">{{ . }}</h2>{{ end }}
+                    {{ with .Site.Data.contact.contactFormSubtitle }}<p class="subtitle-des wow fadeInDown"
+                        data-wow-duration="500ms" data-wow-delay=".5s">{{ . }}</p>{{ end }}
                     <div class="contact-form">
-                        <form id="contact-form" method="#" action="#" role="form">
+                        <!-- modify this form HTML and place wherever you want your form -->
+                        <form id="contact-form" action="https://api.staticforms.xyz/submit" method="post">
+                            <input type="hidden" name="accessKey" value="d58b5d95-8b27-40e2-bf78-098da83be337"> <!-- Required -->
 
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
                                 <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
@@ -32,7 +37,7 @@
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                                 <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
                             </div>
-
+                            
                             <div id="success" class="success">
                                 Thank you. The Mailman is on His Way :)
                             </div>
@@ -40,6 +45,8 @@
                             <div id="error" class="error">
                                 Sorry, don't know what happened. Try later :(
                             </div>
+
+                            <!-- <input type="hidden" name="redirectTo" value="https://example.com/contact/success"> -->
 
                             <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
                                 <button type="submit" id="contact-submit" class="btn btn-default btn-send hvr-bounce-to-right" value="Send Message">Send Message</button>
@@ -50,10 +57,13 @@
             </div>
             <div class="col-md-6">
                 <div class="map-area">
-                    {{ with .Site.Data.contact.mapTitle }}<h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ . }}</h2>{{ end }}
-                    {{ with .Site.Data.contact.mapSubtitle }}<p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">{{ . }}</p>{{ end }}
+                    {{ with .Site.Data.contact.mapTitle }}<h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms"
+                        data-wow-delay=".3s">{{ . }}</h2>{{ end }}
+                    {{ with .Site.Data.contact.mapSubtitle }}<p class="subtitle-des wow fadeInDown"
+                        data-wow-duration="500ms" data-wow-delay=".5s">{{ . }}</p>{{ end }}
                     <div class="map">
-                        <iframe src="https://maps.google.com/maps?q=Lawrence%20Road%2C%202%20Nd%20Floor%20Pushpa%20Market%2C%20Amritsar%2C%20Punjab%20143001&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        <iframe
+                            src="https://maps.google.com/maps?q=Lawrence%20Road%2C%202%20Nd%20Floor%20Pushpa%20Market%2C%20Amritsar%2C%20Punjab%20143001&t=&z=13&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
